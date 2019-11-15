@@ -8,7 +8,7 @@ const data = [
     '晚5:30对今日代码进行review'
 ];
 
-class TodoList extends Component {
+class TaskList extends Component {
     render() { 
         return ( 
             <div style={{margin:'10px'}}>
@@ -27,4 +27,4 @@ class TodoList extends Component {
          );
     }
 }
-export default TodoList;
+export default TaskList;
