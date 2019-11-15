@@ -1,6 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import TaskList from './TaskList';
+import TaskPage from './pages/taskPage';
+
+import store from './store';
+import { Provider } from 'react-redux';
 
 function AppRouter() {
   return (
@@ -9,8 +12,10 @@ function AppRouter() {
             <li> <Link to="/">redux1</Link> </li>
             <li><Link to="/list">redux2</Link> </li>
         </ul>
-        <Route path="/" exact component={TaskList} />
-        <Route path="/list" component={TaskList} />
+        <Provider store={store}>
+          <Route path="/" exact component={TaskPage} />
+          <Route path="/list" component={TaskPage} />
+        </Provider>
     </Router>
   );
 }
