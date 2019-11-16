@@ -1,22 +1,30 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import TaskPage from './pages/taskPage';
+import { BrowserRouter, Link, Route, Switch, Redirect } from "react-router-dom";
+import TaskListPage from './pages/taskListPage';
+import AddTaskPage from './pages/addTaskPage';
+import TaskDetailPage from './pages/taskDetailPage';
 
 import store from './store';
 import { Provider } from 'react-redux';
 
 function AppRouter() {
-  return (
-    <Router>
-        <ul>
-            <li> <Link to="/">redux1</Link> </li>
-            <li><Link to="/list">redux2</Link> </li>
-        </ul>
-        <Provider store={store}>
-          <Route path="/" exact component={TaskPage} />
-          <Route path="/list" component={TaskPage} />
-        </Provider>
-    </Router>
-  );
+    return (
+        <BrowserRouter>
+          <Route path="/" exact>
+            <Redirect to="/list"></Redirect>
+          </Route>
+            <nav>
+                <Link to="/list">任务列表</Link>|
+                <Link to="/add">添加任务</Link>
+            </nav>
+            <Provider store={store}>
+                <Switch>
+                    <Route path="/list" component={TaskListPage} />
+                    <Route path="/add" component={AddTaskPage} />
+                    <Route path="/detail/:taskname" component={TaskDetailPage} />
+                </Switch>
+            </Provider>
+        </BrowserRouter>
+    );
 }
 export default AppRouter;
