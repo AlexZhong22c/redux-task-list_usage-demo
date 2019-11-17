@@ -1,10 +1,11 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import reduxLogger from "redux-logger";
 import reduxThunk from "redux-thunk";
+import userReducer from "./modules/user";
 import taskReducer from "./modules/task";
 
 const store = createStore(
-  combineReducers({ task: taskReducer }),
+  combineReducers({ user: userReducer, task: taskReducer }),
   applyMiddleware(reduxLogger, reduxThunk)
 );
 

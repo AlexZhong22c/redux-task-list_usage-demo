@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React, { useState } from 'react';
-import { Input } from 'antd';
+import { Input, Button } from 'antd';
 import { TaskListContainer } from './taskListPage';
 
 export default connect()(function({ dispatch }) {
@@ -15,7 +15,7 @@ export default connect()(function({ dispatch }) {
           <Input placeholder='请输入...' style={{ width:'250px', marginRight:'10px' }}
               value={taskName} onChange={e => setTaskName(e.target.value)}
               onPressEnter={onAddTask}/>
-          {/* <Button type="primary">增加</Button> */}
+          <Button type="primary" onClick={() => dispatch({type:'loginFailure'})}>退出</Button>
           <TaskListContainer />
       </div>
     );

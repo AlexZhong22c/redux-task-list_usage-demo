@@ -11,7 +11,6 @@ export const mapStateToProps = state => ({
 });
 const mapDispatchToProps = {
     asyncFetch: payload => {
-        // ?????????????????:
         // 其实同步的时候，都是dispatch对象，而这里整段代码相当于dispatch一个函数，所以redux-thunk会处理这个回调函数：
         return dispatch => {
           dispatch({ type: "loading_start" });
