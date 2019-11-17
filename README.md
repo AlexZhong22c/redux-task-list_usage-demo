@@ -4,17 +4,17 @@
 
 ## 项目依赖
 
--[x] create-react-app-antd【Fork】这样就不用照着antd官网来一步一步改create-react-app
--[x] antd
--[x] create-react-app
+- [x] create-react-app-antd【Fork】这样就不用照着antd官网来一步一步改create-react-app
+- [x] antd
+- [x] create-react-app
 
 ## api使用演示
 
--[x] react hooks
--[x] react-redux
--[x] redux
--[x] redux-thunk【Branch +antd+router】
--[x] redux-saga 【Branch +antd+router+saga】
+- [x] react hooks
+- [x] react-redux
+- [x] redux
+- [x] redux-thunk【Branch antd_router】
+- [x] redux-saga 【Branch antd_router_saga】
 
 ## Preview
 
